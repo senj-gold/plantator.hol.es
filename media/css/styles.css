@@ -1,0 +1,324 @@
+/*
+ * 
+ * 
+ * ?reset
+ * 
+ * 
+ */
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+a,
+span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-color: inherit;
+  color: inherit;
+  font-weight: normal;
+  line-height: inherit;
+  vertical-align: inherit;
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;  
+}
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  min-height: 100%;
+  font-size: 100%;
+}
+/*
+*
+* Fixes for IE6-8
+* http://jonikorpi.com/leaving-old-IE-behind/
+*
+*/
+.ie body {
+  width: 40em;
+  margin: 0 auto;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+audio,
+canvas,
+video {
+  display: block;
+}
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+b, strong {
+  font-weight: bold;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+form {
+  vertical-align: top;
+}
+input,
+textarea,
+button,
+select {
+  /*
+  width: 100%;
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+  */
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;  
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+textarea {
+  overflow: auto;
+}
+
+/* fix for bitrix admin panel */
+span div {
+	display: inline;
+}
+
+
+/*
+*
+* 
+* ?figure
+*
+* 
+*/
+figure {
+  position: relative;
+}
+figure img,
+figure object,
+figure embed,
+figure video {
+  max-width: 100%;
+  display: inline-block;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+
+
+
+/* 
+ * 
+ * 
+ * 
+ * 
+ * Text
+ * 
+ * 
+ * 
+ * 
+ * */
+/* sizes */
+body {
+	/* 16px / 24px */
+	font-size: 1em; 
+	line-height: 1.5em;
+}
+.small {
+	/* 14px / 20px */
+	font-size: 0.875em;
+	line-height: 1.4em;
+}
+.normal, p {
+	/* 16px / 24px */
+	font-size: 1em;
+	line-height: 1.5em;
+}
+.big, h4 {
+	/* 18px / 25px */
+	font-size: 1.125em;
+	line-height: 1.4em;
+}
+.large, h3 {
+	/* 22px / 31px */
+	font-size: 1.4em;
+	line-height: 1.4em;
+}
+.huge, h2 {
+	/* 29px / 35px */
+	font-size: 1.8em;
+	line-height: 1.2em;
+}
+.massive, h1 {
+	/* 35px / 39px */
+	font-size: 2.2em;
+	line-height: 1.1em;
+}
+.gigantic {
+	/* 48px / 53px */
+	font-size: 3em;
+	line-height: 1.1em;
+}
+
+a {
+	text-decoration: underline;
+}
+a.js {
+	text-decoration: none;
+	border-style: dotted;
+	border-bottom-width: 1px;
+}
+a:hover, a.active, a.js:hover, a.js.active {
+	text-decoration: none;
+	border-bottom-width: 0;
+}
+p, li {
+	margin-top: 0.7em;
+}
+h1, h2, h3 {
+	margin-top: 1em;
+}
+
+
+.text-upper {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+
+.text-m-center {
+	text-align: center;
+}
+.text-m-left {
+	text-align: left;
+}
+.text-m-right {
+	text-align: right;
+}
+
+@media screen and (min-width: 45em) {
+	.huge, h2 {
+		/* 32px / 42px */	
+		font-size: 2em;
+		line-height: 1.3em;
+	}
+	.massive, h1 {
+		/* 48px / 53px */
+		font-size: 3em;
+		line-height: 1.1em;
+	}
+	.gigantic {
+		/* 64px / 64px */
+		font-size: 4em;
+		line-height: 1em;
+	}
+	.text-t-center {
+		text-align: center;
+	}
+	.text-t-left {
+		text-align: left;
+	}
+	.text-t-right {
+		text-align: right;
+	}
+}
+@media screen and (min-width: 75em) {
+	.gigantic {
+		/* 80px / 80px */
+		font-size: 5em;
+		line-height: 1em;
+	}	
+	.text-d-center {
+		text-align: center;
+	}
+	.text-d-left {
+		text-align: left;
+	}
+	.text-d-right {
+		text-align: right;
+	}
+}
+.font1, body{
+	font-family: 'Open Sans', sans-serif;
+}
+.font2{
+	font-family:'Lobster',cursive;
+}

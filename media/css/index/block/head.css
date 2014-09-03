@@ -1,0 +1,40 @@
+#the_share{
+}
+#the_share .b-share-icon{
+    width: 36px;
+    height: 36px;
+    background-position: 0px 0px;
+}
+#the_share .b-share-icon_vkontakte{
+    background-image: url('/media/img/vkontakte.png');
+}
+#the_share .b-share-icon_vkontakte:hover{
+    
+}
+#the_share .b-share-icon_odnoklassniki{
+    background-image: url('/media/img/odnoklassniki.png');
+}
+#the_share .b-share-icon_odnoklassniki:hover{
+}
+#the_share .b-share-icon_facebook{
+    background-image: url('/media/img/facebook.png');
+}
+#the_share .b-share-icon_facebook:hover{
+}
+#the_share .b-share-icon_twitter{
+    background-image: url('/media/img/twitter.png');
+}
+#the_share .b-share-icon_twitter:hover{
+}
+/*#the_share .b-share-icon_gplus{
+    background-position: -114px 0;
+}
+#the_share .b-share-icon_gplus:hover{
+    background-position: -114px -38px;
+}
+#the_share .b-share-icon_linkedin{
+    background-position: -228px 0;
+}
+#the_share .b-share-icon_linkedin:hover{
+    background-position: -228px -38px;
+}*/
