@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{ _title }}</title>
+    <meta name="description" content="{{ _description }}"/>
+    <meta name="keywords" content="{{ _keywords }}"/>
+    <link rel="shortcut icon" href="{{ Url.media('/media/img/favicon.ico') }}" type="image/x-icon"/>
+    {# ---------------------СТИЛИ----------------------------- #}
+    <link rel="stylesheet" type="text/css" href="{{ Url.media('/media/css/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Url.media('/media/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Url.media('/media/css/slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Url.media('/media/libs/slider/slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Url.media('/media/libs/selectbox/jquery.selectbox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Url.media('/media/libs/mCustomScrollbar/jquery.mCustomScrollbar_portal.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700&subset=cyrillic,latin' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab&subset=cyrillic' rel='stylesheet' type='text/css'>
+    {# ---------------------СКРИПТЫ--------------------------- #}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+
+    <script type="text/javascript" src="{{ Url.media('/media/js/portal1.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/selectbox/jquery.selectbox-0.2.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.easing.1.2.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.anythingslider.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/slider/jquery-slider.js') }}"></script>
+
+    {#
+    <script type="text/javascript" src="{{ Url.media('/media/js/portal.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/js/scrolling_portal.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/selectbox/jquery.selectbox-0.2.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.easing.1.2.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.anythingslider.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.anythingslider.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.easing.1.2.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/jquery.scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/selectbox/jquery.selectbox-0.2.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/slider/jquery-slider.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/inputmask/jquery.inputmask.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/inputmask/jquery.inputmask.extensions.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/inputmask/jquery.inputmask.date.extensions.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/inputmask/jquery.inputmask.numeric.extensions.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/inputmask/jquery.inputmask.custom.extensions.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/arcticmodal/jquery.arcticmodal.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/libs/all.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/js/base.js') }}"></script>
+    #}
+
+    <script type="text/javascript" src="{{ Url.media('/media/js/jquery.inputmask.js') }}"></script>
+    <script type="text/javascript" src="{{ Url.media('/media/js/jquery.inputmask.regex.extensions.js') }}"></script>
+
+</head>
+<body>
+<div id="background{% if _controller=='Budget' %}_budget{% endif %}">
+    <div id="conteyner">
+        <div id="header">
+            <div id="header_left">
+                <ul class="navigation">
+                    <li><a href="/">{% if _controller=='Main' %}<span>{% endif %}
+                                услуги{% if _controller=='Main' %}</span>{% endif %}</a></li>
+                    <li><a href="/repair">{% if _controller=='Repair' %}<span>{% endif %}
+                                о ремонте{% if _controller=='Main' %}</span>{% endif %}</a></li>
+                    <li><a href="/project">{% if _controller=='Project' %}<span>{% endif %}
+                                о проекте{% if _controller=='Main' %}</span>{% endif %}</a></li>
+                    <li><a href="/contacts">{% if _controller=='Contacts' %}<span>{% endif %}
+                                контакты{% if _controller=='Main' %}</span>{% endif %}</a></li>
+                </ul>
+                <div id="logo"></div>
+            </div>
+            <div id="header_right">
+                <div id="privat">
+                    <p>
+                    {% if _user %}
+                        <a href="{{ Url.site('/admin') }}">{{ _user.username }}</a>
+                        <a href="{{ Url.site('auth/logout') }}">Выйти</a>
+                    {% else %}
+                        личный кабинет
+                    {% endif %}
+                    </p>
+                </div>
+                <div id="sticker"></div>
+                <p id="cel">+7 (499) 162-83-96</p>
+
+                <div id="call"></div>
+                <h1>Круглосуточно, без выходных</h1>
+
+                <h2>Позвоните и узнайте о действующих акциях</h2>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock content %}
+        <div id="footer">
+            <div id="footer_left">
+                <ul class="navigation">
+                    <li><a href="#">Подбор ремонтной компании <span>онлайн</span></a></li>
+                    <li><a href="#">Ваш представитель</a></li>
+                    <li><a href="#">О проекте</a></li>
+                </ul>
+                <div id="footer_counter">
+                    <div class="counter_number n_none"></div>
+                    <div class="counter_number n8"></div>
+                    <div class="counter_number n9"></div>
+                    <div class="counter_number n6"></div>
+                    <div class="counter_number n3"></div>
+                    <div class="counter_number n1"></div>
+                    <p>смет расчитано</p>
+                </div>
+                <h1>© 2013–2014 MasterSmeta LLC. Все права защищены. Запрещено любое копирование материалов
+                    ресурса.</h1>
+            </div>
+            <div id="footer_right">
+                <div id="footer_social_networks">
+                    <p>Расскажите о&nbsp;нас&nbsp;друзьям</p>
+                </div>
+                <a href="#" id="sum"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if _user.username is not defined %}
+    {% include "layout/auth.twig" %}
+{% endif %}
+
+<div id="calculation">
+    <div id="calculation_line"></div>
+</div>
+
+<div id="top_right_stiker_rooms">
+    <div id="top_right_stiker_one_room" class="one_room" data-numb="1"></div>
+    <div id="top_right_stiker_two_room" class="two_room" data-numb="2"></div>
+    <div id="top_right_stiker_three_room" class="three_room" data-numb="3"></div>
+    <div id="top_right_stiker_four_room" class="four_room" data-numb="4"></div>
+    <div id="top_right_stiker_five_room" class="five_room" data-numb="5"></div>
+</div>
+
+{% if _controller=='Main' %}
+    <div id="top_right_stiker">
+        <p>Сколько комнат в вашей квартире?</p>
+        <a href="#" class="send_form">Ваша смета</a>
+    </div>
+
+    <div id="instruments_top_left"></div>
+    <div id="instruments_top_right_1"></div>
+    <div id="instruments_top_right_2"></div>
+    <div id="instruments_bottom_left"></div>
+    <div id="instruments_bottom_right"></div>
+{% endif %}
+
+<div id="page_up"></div>
+</body>
+</html>

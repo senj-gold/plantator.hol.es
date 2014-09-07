@@ -1,13 +1,18 @@
-var Menu = function() {
-    var _this = this;
-    _this.init = function() {
-      
+var Menu = (function() {
+    var defaults = {};
 
-    }
-}
-
-
+    function Menu() {
+        this.params = {};
+    };
+    
+    Menu.prototype.init = function(options)
+    {
+        this.params = $.extend(defaults, options);
+        
+       
+    };
+    return new Menu();
+})();
 $(document).ready(function() {
-    plantator.menu = new Menu();
-    plantator.menu.init();
-})
+    Menu.init();
+});

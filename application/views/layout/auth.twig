@@ -1,0 +1,155 @@
+<script>
+    $(document).ready(function() {
+        $("#privat p").on("click", authorization);
+        $(".privatAuth").on("click", authorization);
+        $("#close_pop_up").on("click", close_authorization);
+        $("#pop_up_signin").on("click", signin);
+        $("#send_password").on("click", signup);
+        $("#remind_me").on("click", remind);
+
+        $("#go_registration").on("click", function() {  $("#registration").show(); $("#authorization").slideUp(); });
+        $("#go_authorization").on("click", function() { $("#authorization").slideDown(400, function() {$("#registration").hide(); }); });
+        $("#send_password").on("click", function() { $("#authorization").slideDown(400, function() {$("#registration").hide(); }); });
+        $("#leave_remind_password").on("click", function() { $("#authorization").show(); $("#remind_password").slideUp(); });
+        $("#go_remind_password").on("click", function() { $("#remind_password").slideDown(400, function() {$("#authorization").hide(); }); });
+
+        $("#username_reg").inputmask("Regex", { regex: '[a-zA-Z0-9\/,\>!"№;%:\?\*\(\)\+=-]{3,24}' });
+        $("#email_reg").inputmask('Regex', { regex: "[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}" });
+        $("#email_remind").inputmask('Regex', { regex: "[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}" });
+
+
+        $("#email_reg").on('blur',function(){
+            var email = $(this).val();
+            $.ajax({
+                type: "POST",
+                url: "{{ Url.site("auth/allow_email") }}",
+                data: {  email : email },
+                success: function(data){
+                    var result = JSON.parse(data);
+                    if (parseInt(result.data) != 1){
+                     $("#error_reg").empty();
+                     $("#error_reg").append('Email не доступен для регистрации');
+                     $('#error_reg').show();
+                     }else{
+                     $('#error_reg').hide();
+                     }
+                }
+            }, 'json');
+        });
+
+        $("#username_reg").on('blur',function(){
+            var login = $(this).val();
+            $.ajax({
+                url: "{{ Url.site('auth/allow_login') }}"+"/"+login,
+                method : "POST",
+                success : function(status){
+                    if (parseInt(status) != 1){
+                        $("#error_reg").empty();
+                        $("#error_reg").append('Логин не доступен для регистрации');
+                        $('#error_reg').show();
+                    }else{
+                        $('#error_reg').hide();
+                    }
+                }
+            });
+        });
+    });
+    function authorization(){
+        $('#pop_up').find('input').each(function () {
+            $(this).val('');
+        });
+        $('#error_reg').hide();
+        $("#error_auth").hide();
+        $("#overlap").show();
+        $("#pop_up").show();
+        $("#close_pop_up").show();
+        $("#authorization").show();
+    }
+    function close_authorization(){
+        $("#overlap").hide();
+        $("#pop_up").hide();
+        $("#close_pop_up").hide();
+        $("#authorization").hide();
+        $("#registration").hide();
+        $("#remind_password").hide();
+        $("#pop_up-add_review").hide();
+    }
+    function signin(){
+        var username = $('#username').val(), password=$('#password').val();
+        $.ajax({
+            type: "POST",
+            url: "{{ Url.site("auth/signin") }}",
+            data: { token: '{{ _token }}', username: username, password: password },
+            success: function(data){
+                var result = JSON.parse(data);
+                if(result.success){
+                    window.location.replace("{{ Url.site('/') }}");
+                }else {
+                    $("#error_auth").empty();
+                    $("#error_auth").append(result.error);
+                    $("#error_auth").show();
+                }
+            }
+        }, 'json');
+    }
+    function signup(){
+        var username = $('#username_reg').val(), email=$('#email_reg').val();
+        if($('#error_reg').is(':hidden')){
+            $.ajax({
+                type: "POST",
+                url: "{{ Url.site("auth/signup") }}",
+                data: { token: '{{ _token }}', username: username, email: email }
+            }, 'json');
+        }
+    }
+    function remind(){
+        var email=$('#email_remind').val();
+            $.ajax({
+                type: "POST",
+                url: "{{ Url.site("auth/remind") }}",
+                data: { email: email }
+            }, 'json');
+    }
+</script>
+<div id="overlap"></div>
+<div id="pop_up">
+    <div id="remind_password">
+        <p class="pop_up_header">Напомнить пароль</p>
+        <input class="pop_up_input" id="email_remind" placeholder="Адрес вашей электронной почты"/>
+
+        <p class="pop_up_enter" id="remind_me">Отправить</p>
+        <a href="#" id="leave_remind_password">войти в личный кабинет</a>
+    </div>
+    <div id="authorization">
+        <p class="pop_up_header">авторизация</p>
+        <span style="display: none;color: red;margin-left: 160px;margin-top: -10px;position: absolute;" id="error_auth"></span>
+        <input class="pop_up_input" id="username" placeholder="Ваше имя"/>
+        <input class="pop_up_input" id="password" placeholder="Пароль" type="password"/>
+
+        <p class="pop_up_enter" id="pop_up_signin">Войти</p>
+        <a href="#" id="go_remind_password">напомнить пароль</a>
+        <a href="#" id="go_registration">Регистрация</a>
+    </div>
+    <div id="registration">
+        <p class="pop_up_header">регистрация</p>
+        <span style="display: none;color: red;margin-left: 110px;margin-top: -10px;position: absolute;" id="error_reg"></span>
+        <input class="pop_up_input" id="username_reg" placeholder="Представтесь, пожалуйста"/>
+        <input class="pop_up_input" id="email_reg" placeholder="Адрес вашей электронной почты"/>
+
+        <p class="pop_up_enter" id="send_password">Выслать пароль для входа</p>
+        <a href="#" id="go_authorization">войти в личный кабинет</a>
+    </div>
+    <div id="pop_up-add_review">
+        <h1>Оставить отзыв</h1>
+
+        <h2 style="display: none">Имя пользователя:</h2>
+        <textarea placeholder="Ваше мнение (не более 110 символов)" style="display: none"></textarea>
+        <a id="send_review" style="display: none">отправить</a>
+
+        <p style="display: block">Для того, чтобы оставить отзыв,
+            необходимо пройти <a id="add_review-go_registration">регистрацию</a>.
+            Это займет всего пару минут.</p>
+
+    </div>
+</div>
+<div id="close_pop_up"></div>

@@ -4,40 +4,7 @@
         <?php if ($errors) :?>
             <div class="inputBlock alert error"><?= implode(', ', $errors); ?><a href="#"></a></div>
         <?php endif; ?>
-        <?php if(count($categories) == 0):?>
-<!--            <form method="POST">
-                <table>
-                    <tr>
-                        <td>Название</td>
-                        <td><input type="text" name="name" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Описание</td>
-                        <td>
-                                <?php //echo Ckeditor::instance()->editor('description', '', array('id'=>'text','width' => 400)); ?>
-                            <?//=HTML::wysiwyg($textareaName = 'description', $value = '');?>
-                            <script type="text/javascript">
-                                    CKEDITOR.replace( 'text' );
-                                </script>
-                       
-                        </td>
-                    </tr>
-                 <tr>
-                        <td>Цена</td>
-                        <td><input type="text" name="price" value="" /></td>
-                    </tr>
-                <tr>
-                        <td>Выход</td>
-                        <td><input type="text" name="heft" value="" /></td>
-                    </tr>
-                <tr>
-                        <td></td>
-                        <td><input type="submit" name="add" value="Добавить" /></td>
-                    </tr>
-                </table>
-            </form>-->
-        <?php endif; ?>
-        
+
         <?php foreach ($categories as $val): ?>
                 <form action="" method="POST" enctype="multipart/form-data"  style="width: 100%;line-height: 25px;">
                 <table style="width: 100%;" class="tr-hover">
@@ -58,7 +25,7 @@
             </form>
         <?php endforeach; ?>
 <?php if(count($menu) > 0):?>
-<a href="/admin/menu/delall/<?=  Request::initial()->param('id')?>">Очистить раздел</a>
+<a href="/admin/menu/delall/<?=  Request::initial()->param('id')?>">Очистить раздел ваще )))</a>
                 <table style="width: 100%;" class="tr-hover table_center">
                     <thead>
         <tr style="border:1px solid #d7d7d7">
@@ -68,36 +35,34 @@
             <td></td>
         </tr>
         </thead>
+        
         <?php foreach ($menu as $val): ?>
-<!--                <div><?=$val->name?> <span><?=$val->price?></span> <span><?=$val->heft?></span></div>     
-                <div><?=$val->description?></div>   -->
-                
                     <tr>
-                        <td  style="border:1px solid #d7d7d7;pagging:5px">
-                <form action="" method="POST" enctype="multipart/form-data"  style="width: 100%;line-height: 25px;">
-                            <div  class="hover-show-hover">
-                                <input type="hidden" name="id" value="<?= $val->id ?>">
-                                <strong class="edit-hidden-click name"><?= $val->name ?></strong>
-                                <input class="edit-show-click " type="text" name="name" value="<?= $val->name ?>">
-                                <a href="/admin/menu/delete/<?= $val->id ?>" title="Удалить" class="delete-botton show-hover data-confirm" data-confirm="Вы действительно хотите удалить блюдо '<?= $val->name ?>'" style="left: 15px;"></a>
-                                <div><?= $val->description ?></div>
-                                <div><strong><?= $val->name_en ?></strong></div>
-                                <div><?= $val->description_en ?></div>
-                            </div>
-            </form>
+                        <td  style="border:1px solid #d7d7d7;padding:5px">
+                            <form action="" method="POST" enctype="multipart/form-data"  style="width: 100%;line-height: 25px;">
+                                <div  class="hover-show-hover">
+                                    <input type="hidden" name="id" value="<?= $val->id ?>">
+                                    <strong class="edit-hidden-click name"><?= $val->name ?></strong>
+                                    <input class="edit-show-click " type="text" name="name" value="<?= $val->name ?>">
+                                    <a href="/admin/menu/delete/<?= $val->id ?>" title="Удалить" class="delete-botton show-hover data-confirm" data-confirm="Вы действительно хотите удалить блюдо '<?= $val->name ?>'" style="left: 15px;"></a>
+                                    <div><?= $val->description ?></div>
+                                    <div><strong><?= $val->name_en ?></strong></div>
+                                    <div><?= $val->description_en ?></div>
+                                </div>
+                            </form>
                         </td>
-                        <td style="border:1px solid #d7d7d7;pagging:5px">
-                            <?=$val->heft?>
+                        <td style="border:1px solid #d7d7d7;padding:5px">
+                            <a href="#" data-type="text" id="heft" data-pk="<?=$val->id?>" data-title="Введите выход" class="editable editable-click admin-editable-menu"><?=$val->heft?></a>
                         </td>
-                        <td style="border:1px solid #d7d7d7;pagging:5px">
+                        <td style="border:1px solid #d7d7d7;padding:5px">
                             <?=$val->price?>
                         </td>
                     </tr>
                 
         <?php endforeach; ?>
-                </table>
+            </table>
 <?php endif;?>
     </div>
+  
     <!--End innerContent-->
-</div> 
-<!--End content-->	
+</div>

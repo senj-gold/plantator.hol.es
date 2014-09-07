@@ -12,11 +12,11 @@ class Model_Menu extends ORM
 	 * @var array
 	 */
 	protected $_belongs_to = array(
-                        'cat' => array(
-                               'model' => 'Category',
-                               'foreign_key' => 'cat_id'
-                       ),
-                   );
+        'category' => array(
+               'model' => 'Category',
+               'foreign_key' => 'cat_id'
+       ),
+   );
 
 	/**
 	 * "Has many" relationships

@@ -14,7 +14,7 @@ class Controller_Base extends Controller_Template {
 
     public function before() {
         parent::before();
-        self::$domain_name = 'flibuster.hol.es';
+        self::$domain_name = 'plantator.hol.es';
 //        $region_obj = new Model_Geo();
 //        $region_obj->define_region();
 //        $arr_lang  = ORM::factory('Lang')->get_array_alias();
@@ -28,20 +28,13 @@ class Controller_Base extends Controller_Template {
 
 //         $seo = ORM::factory('article')->where('alias', '=', 'main')->find();
 //
-        $this->template->title 		= '';
-//        $this->template->title 		= $seo->title;
+        $this->template->title 		= 'Плантатор';
         $this->template->description    = '';
-//        $this->template->description    = $seo->description;
         $this->template->keywords 	= '';
-//        $this->template->keywords 	= $seo->keywords;
 
         // Подключаем стили
         $this->template->styles = array();
-        $this->template->scripts = array('/media/libs/jquery-1.9.1.min.js');
-      
-//        if (!$this->auth->logged_in()) {
-//            $this->template->scripts[] = '/media/js/page/auth.js';
-//        }
+        $this->template->scripts = array('/media/libs/metronic/assets/global/plugins/jquery-1.11.0.min.js');
     }
 
 }

@@ -1,0 +1,126 @@
+{% extends "admin/index.twig" %}
+{% block boody %}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="page-title">
+                        Меню <small>новое блюдо</small>
+                    </h3>
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="{{ Url.site('/admin') }}">Рабочий стол</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="{{ Url.site('/admin/menu') }}">Меню</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="row">
+        <div class="col-md-12">
+            <div class="portlet">
+                <div class="portlet-body">
+                    <div class="table-container">
+                        <div class="portlet box blue">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i>Новое блюдо
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse"></a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <!-- BEGIN FORM-->
+                                <form action="{{ Url.site('/admin/menu/create') }}" class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Категория</label>
+                                            <div class="col-md-9">
+                                                 <select name="cat_id" class="form-control">
+                                                    {% for cat in _categories %}
+                                                        {% if cat.name is not empty %} 
+                                                            <option value="{{ cat.id }}"{% if cat.has_children %} disabled{% endif%}>{{ cat.getEmptyLvl }}{{ cat.name}}</option>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </select>
+                                                <span class="help-block">Укажите категорию</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Название</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="name" placeholder="Введите название" class="form-control">
+                                                <span class="help-block">Введите название блюда</span>
+                                                {% if _errors.name is defined %}{{ _errors.name.0 | raw('html') }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Описание</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="description" placeholder="Введите описание" class="form-control">
+                                                <span class="help-block">Введите описание блюда</span>
+                                                {% if _errors.description is defined %}{{ _errors.description.0 | raw('html') }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Название на английском</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="name_en" placeholder="Введите название на английском" class="form-control">
+                                                <span class="help-block">Введите название блюда на английском</span>
+                                                {% if _errors.name_en is defined %}{{ _errors.name_en.0 | raw('html') }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Описание на английском</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="description_en" placeholder="Введите описание на английском" class="form-control">
+                                                <span class="help-block">Введите описание блюда на английском</span>
+                                                {% if _errors.description_en is defined %}{{ _errors.description_en.0 | raw('html') }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Выход</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="heft" placeholder="Введите выход" class="form-control">
+                                                <span class="help-block">Введите выход</span>
+                                                {% if _errors.heft is defined %}{{ _errors.heft.0 | raw('html') }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Цена</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="price" placeholder="Введите цену" class="form-control">
+                                                <span class="help-block">Введите цену</span>
+                                                {% if _errors.price is defined %}{{ _errors.price.0 | raw('html') }}{% endif %}
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-actions fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" class="btn green"><i class="fa fa-pencil"></i> Добавить</button>
+                                                    <a href="{{ Url.site('/admin/menu') }}" class="btn default">Отмена</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End: life time stats -->
+        </div>
+    </div>
+            <!-- END PAGE CONTENT-->
+
+{% endblock boody %}

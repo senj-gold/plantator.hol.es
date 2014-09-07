@@ -10,18 +10,14 @@ class Controller_Index_Main extends Controller_Base {
             $this->session = Session::instance();
             $this->session->set('redirectAfterLogin', $_SERVER['REQUEST_URI']);
         }
-
         $this->template->styles[] = '/media/css/colors.css';
         $this->template->styles[] = '/media/css/cell.css';
         $this->template->styles[] = '/media/css/kernel_main.css';
         $this->template->styles[] = '/media/css/template_ace.css';
-
         $this->template->styles[] = '/media/css/core.css';
         $this->template->styles[] = '/media/css/core_popup.css';
         $this->template->styles[] = '/media/css/styles.css';
-
-         $this->template->styles[] = '/media/css/index/block/head.css';
-         
+        $this->template->styles[] = '/media/css/index/block/head.css';
         $this->template->styles[] = '/media/css/base.css';
 
 

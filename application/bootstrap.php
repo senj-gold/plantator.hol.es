@@ -134,6 +134,7 @@ Kohana::modules(array(
 	 'ckeditor'        => MODPATH.'ckeditor',
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+    'template'       => MODPATH.'template',
 	));
 
 /**
@@ -149,7 +150,7 @@ Route::set('auth', 'auth(/<controller>)')
 Route::set('admin', 'admin(/<controller>(/<action>(/<id>)))',array('id'=>'[0-9]+'))
 	->defaults(array(
 		'directory'  => 'admin',
-		'controller' => 'category',
+		'controller' => 'index',
 		'action'     => 'index',
 	));
 Route::set('default', '(<controller>(/<action>(/<id>)))')
