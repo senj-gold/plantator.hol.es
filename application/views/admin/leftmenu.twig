@@ -56,23 +56,23 @@
                     </li>
                 </ul>
             </li>           
-            {#<li{% if _controller == 'News' %} class="active"{% endif %}>
+            <li{% if _controller == 'News' %} class="active"{% endif %}>
                 <a href="javascript:;">
                     <i class="fa fa-sitemap"></i>
                     <span class="title">Новости</span>
                     <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
-                    <li{% if _action == 'index' %} class="active"{% endif %}>
-                        <a href="{{ Url.site('/admin/news') }}">
-                            <i class="fa fa-sitemap"></i>
-                            <span class="title">Список новостей</span>
-                        </a>
-                    </li>
                     <li{% if _action == 'create' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/news/create') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Создать новость</span>
+                        </a>
+                    </li>
+                    <li{% if _action == 'index' %} class="active"{% endif %}>
+                        <a href="{{ Url.site('/admin/news') }}">
+                            <i class="fa fa-sitemap"></i>
+                            <span class="title">Список новостей</span>
                         </a>
                     </li>
                 </ul>
@@ -84,18 +84,19 @@
                     <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
-                    <li{% if _action == 'index' %} class="active"{% endif %}>
-                        <a href="{{ Url.site('/admin/gallery') }}">
-                            <i class="fa fa-sitemap"></i>
-                            <span class="title">Все галереи</span>
-                        </a>
-                    </li>
                     <li{% if _action == 'create' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/gallery/create') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Создать галерею</span>
                         </a>
                     </li>
+                    <li{% if _action == 'index' %} class="active"{% endif %}>
+                        <a href="{{ Url.site('/admin/gallery') }}">
+                            <i class="fa fa-sitemap"></i>
+                            <span class="title">Все галереи</span>
+                        </a>
+                    </li>
+                    
                 </ul>
             </li>
             {#<li>

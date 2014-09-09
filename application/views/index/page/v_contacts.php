@@ -37,7 +37,146 @@
             </div>		
             <div class="row vpad cell-m-100 cell-t-50 pad text-m-center">
                 <div class="bg-2 vpad cell-m-100">
-                    <div class="vpad cell-m-100"><div class="ico_pic_32a_edit_2"></div><p><strong>Вы всегда можете забронировать столик в нашем ресторане</strong></p><div class="row pad vpad popup"><div class="cell-m-auto border-all-2"><a class="pad vpad link-block mark-bg" href="#"><strong>Забронировать</strong></a></div></div><div style="background: url(/media/img/darker.png); position: absolute; z-index: 1; top: 0; left: 0; width: 100%;" class="hidden popup-close"><div class="text-m-center mar-t-25 cell-t-50"><div style="background-color: transparent; cursor: pointer;" class="popup-close bg-2 row pad vpad ico_pic_32b_close ico_pos_right">&nbsp;</div><div id="intels_feedback_restaurant" class="bg-1 ajax_container row"><div class="vpad"><div class="ico_pic_32a_edit_2">&nbsp;</div></div><div class="vpad border-top-1 cell-m-auto"><h3 class="text-upper opacity">Бронирование столика</h3></div><form action="/contacts/" method="POST"><input type="hidden" name="sessid" id="sessid" value="93bc8a39b8c82af622d546ce40e62167"><div class="cell-m-100"><div style="width: 10em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input7263521">Число персон*</label></div><div class="row"><input id="input7263521" style="padding-right: 65px;" class="text-m-left input_mask_int cell-m-100 border-all-1 pad vpad" type="text" name="PERSONS" value="1"><div style="float: left; margin-left: -50px; width: 50px;" class="input_counter bg-4"><a style="height: 27px;" class="mark-bg link-block ico_pic_16a_arrow_up_1" href="#">&nbsp;</a><a style="height: 27px;" class="mark-bg link-block ico_pic_16a_arrow_down_1" href="#">&nbsp;</a></div></div></div></div><div style="width: 12em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input8056178">Дата*</label></div><div class="row"><input id="input8056178" style="padding-right: 65px;" class="input_mask_date cell-m-100 border-all-1 pad vpad text-m-left" type="text" name="DATE" value="05.04.2014"><div style="float: left; margin-left: -50px; width: 50px;" class="input_dropdown bg-4"><a class="vpad mark-bg link-block ico_pic_32a_calendar_1" href="#">&nbsp;</a></div></div><div style="cursor: pointer; position: absolute; z-index: 1;" class="bg-3 text-m-left input_options hidden small border-right-1 border-bottom-1 border-left-1"><div class="cell-m-auto active"><div class="mark-bg pad vpad nowrap">05.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">06.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">07.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">08.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">09.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">10.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">11.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">12.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">13.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">14.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">15.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">16.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">17.04.2014</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">18.04.2014</div></div></div></div></div><div style="width: 10em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input2967588">Время*</label></div><div class="row"><input id="input2967588" style="padding-right: 65px;" class="text-m-left input_mask_time cell-m-100 border-all-1 pad vpad" type="text" name="TIME" value="19:00"><div style="float: left; margin-left: -50px; width: 50px;" class="input_dropdown bg-4"><a class="vpad mark-bg link-block ico_pic_32a_alarm" href="#">&nbsp;</a></div></div><div style="cursor: pointer; position: absolute; z-index: 1;" class="bg-3 text-m-left input_options hidden small border-left-1 border-right-1 border-bottom-1"><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">12:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">13:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">14:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">15:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">16:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">17:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">18:00</div></div><div class="cell-m-auto active"><div class="mark-bg pad vpad nowrap">19:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">20:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">21:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">22:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">23:00</div></div><div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">00:00</div></div></div></div></div></div><div class="cell-m-100"><div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input8602823">Ваше имя*</label></div><div class="row"><input id="input8602823" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="AUTHOR" value=""></div></div></div></div><div class="cell-m-100"><div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input2726899">Телефон*</label></div><div class="row"><input id="input2726899" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="PHONE" value=""></div></div></div></div><div class="cell-m-100"><div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input7412375">E-mail</label></div><div class="row"><input id="input7412375" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="EMAIL" value=""></div></div></div></div><div class="cell-m-100"><div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input5788990">Дополнительно</label></div><div class="row"><input id="input5788990" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="TEXT" value=""></div></div></div></div><div class="cell-m-100"><div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100"><div class="row"><label for="input6840385">Введите слово на картинке*</label></div><div class="row"><input id="input6840385" class="cell-m-100 border-all-1 pad vpad" type="text" name="captcha_word" value="" maxlength="50"><figure class="cell-m-100"><img src="http://restaurant.intels.pro/bitrix/tools/captcha.php?captcha_sid=03fd47f72d60b5ecc1dfc110ebcbbdf3" alt="CAPTCHA"></figure><input type="hidden" name="captcha_sid" value="03fd47f72d60b5ecc1dfc110ebcbbdf3"></div></div></div></div><div class="row"><div class="cell-m-100"><div style="max-width: 16em;" class="cell-m-auto pad vpad"><div class="row bg-4"><input type="hidden" name="PARAMS_HASH" value="4adf45a1cadcf70b6b697bb5f7d8a598"><input type="hidden" name="submit" value="submit"><input class="reservation_input bg-4 pad vpad cell-m-100 border-0 ajax_submit mark-bg" type="submit" value="Забронировать"></div></div></div></div></form></div></div></div></div>			</div>
+                    <div class="vpad cell-m-100">
+                        <div class="ico_pic_32a_edit_2"></div>
+                        <p><strong>Вы всегда можете забронировать столик в нашем ресторане</strong></p>
+                        <div class="row pad vpad popup">
+                            <div class="cell-m-auto border-all-2">
+                                <a class="pad vpad link-block mark-bg" href="#">
+                                    <strong>Забронировать</strong>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="background: url(/media/img/darker.png); position: absolute; z-index: 1; top: 0; left: 0; width: 100%;" class="hidden popup-close">
+                            <div class="text-m-center mar-t-25 cell-t-50">
+                                <div style="background-color: transparent; cursor: pointer;" class="popup-close bg-2 row pad vpad ico_pic_32b_close ico_pos_right">&nbsp;</div>
+                                    <div id="intels_feedback_restaurant" class="bg-1 ajax_container row">
+                                        <div class="vpad">
+                                            <div class="ico_pic_32a_edit_2">&nbsp;</div>
+                                        </div>
+                                        <div class="vpad border-top-1 cell-m-auto">
+                                            <h3 class="text-upper opacity">Бронювання столика</h3>
+                                        </div>
+                                        <form action="/" method="POST">
+                                            <input type="hidden" name="sessid" id="sessid" value="7e1d1d96423e412591f48952fd6173d4">
+                                            <div class="cell-m-100">
+                                                <div style="width: 10em;" class="cell-m-auto pad vpad">
+                                                    <div class="input_container cell-m-100">
+                                                        <div class="row">
+                                                            <label for="input5343479">Чісло персон*</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <input id="input5343479" style="padding-right: 65px;" class="text-m-left input_mask_int cell-m-100 border-all-1 pad vpad" type="text" name="count" value="1">
+                                                            <div style="float: left; margin-left: -50px; width: 50px;" class="input_counter bg-4">
+                                                                <a style="height: 27px;" class="mark-bg link-block ico_pic_16a_arrow_up_1" href="#">&nbsp;</a>
+                                                                <a style="height: 27px;" class="mark-bg link-block ico_pic_16a_arrow_down_1" href="#">&nbsp;</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="width: 12em;" class="cell-m-auto pad vpad">
+                                                    <div class="input_container cell-m-100">
+                                                        <div class="row">
+                                                            <label for="input3554523">Дата*</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <input id="input3554523" style="padding-right: 65px;" class="input_mask_date cell-m-100 border-all-1 pad vpad text-m-left" type="text" name="date" value="<?=date('d.m.Y')?>">
+                                                            <div style="float: left; margin-left: -50px; width: 50px;" class="input_dropdown bg-4">
+                                                                <a class="vpad mark-bg link-block ico_pic_32a_calendar_1" href="#">&nbsp;</a>
+                                                            </div>
+                                                        </div>
+                                                        <div style="cursor: pointer; position: absolute; z-index: 1;" class="bg-3 text-m-left input_options hidden small border-right-1 border-bottom-1 border-left-1">
+                                                            <div class="cell-m-auto active"><div class="mark-bg pad vpad nowrap"><?=date('d.m.Y')?></div></div>
+                                                            <?php for ($i = 1;$i <= 14; $i++):?>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap"><?=date('d.m.Y', mktime(0,0,0,date('m'),date('d')+$i,date('Y')))?></div></div>
+                                                            <?php endfor ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="width: 10em;" class="cell-m-auto pad vpad">
+                                                    <div class="input_container cell-m-100">
+                                                        <div class="row"><label for="input7482801">Час*</label></div>
+                                                        <div class="row">
+                                                            <input id="input7482801" style="padding-right: 65px;" class="text-m-left input_mask_time cell-m-100 border-all-1 pad vpad" type="text" name="time" value="19:00">
+                                                            <div style="float: left; margin-left: -50px; width: 50px;" class="input_dropdown bg-4">
+                                                                <a class="vpad mark-bg link-block ico_pic_32a_alarm" href="#">&nbsp;</a>
+                                                            </div>
+                                                        </div>
+                                                        <div style="cursor: pointer; position: absolute; z-index: 1;" class="bg-3 text-m-left input_options hidden small border-left-1 border-right-1 border-bottom-1">
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">13:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">14:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">15:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">16:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">17:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">18:00</div></div>
+                                                            <div class="cell-m-auto active"><div class="mark-bg pad vpad nowrap">19:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">20:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">21:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">22:00</div></div>
+                                                            <div class="cell-m-auto"><div class="mark-bg pad vpad nowrap">23:00</div></div>                                                              
+                                                        </div>
+                                                </div></div>
+                                                        
+                                            </div>
+                                            <div class="cell-m-100">
+                                                <div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad">
+                                                    <div class="input_container cell-m-100">
+                                                        <div class="row">
+                                                            <label for="input6232613">Ваше імя*</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <input id="input6232613" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="firstname" value="<?= isset($post['firstname']) ? $post['firstname'] : ''?>" required />
+                                                            
+                                                        </div>
+                                                        <div class="row" style="color:red;font-weight: bolder">
+                                                            <?php if(isset($post['firstname']) && empty($post['firstname'])):?>Введіть будь ласка імя<?php endif?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cell-m-100">
+                                                <div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad">
+                                                    <div class="input_container cell-m-100">
+                                                        <div class="row">
+                                                            <label for="input3008444">Телефон*</label>
+                                                        </div>
+                                                        <div class="row">
+                                                            <input id="input3008444" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="phone" value="<?= isset($post['phone']) ? $post['phone'] : ''?>" required />
+                                                        </div>
+                                                        <div class="row" style="color:red;font-weight: bolder">
+                                                            <?php if(isset($post['phone']) && empty($post['phone'])):?>Введіть будь ласка телефон<?php endif?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cell-m-100"><div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad">
+                                                    <div class="input_container cell-m-100"><div class="row"><label for="input6803875">E-mail</label></div>
+                                                        <div class="row"><input id="input6803875" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="email" value="<?= isset($post['email']) ? $post['email'] : ''?>"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cell-m-100"><div style="width: 100%; max-width: 32em;" class="cell-m-auto pad vpad"><div class="input_container cell-m-100">
+                                                        <div class="row"><label for="input9346253">Додатково</label></div>
+                                                        <div class="row"><input id="input9346253" class="text-m-left cell-m-100 border-all-1 pad vpad" type="text" name="text" value="<?= isset($post['text']) ? $post['text'] : ''?>"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="cell-m-100">
+                                                    <div style="max-width: 16em;" class="cell-m-auto pad vpad">
+                                                        <div class="row bg-4">
+                                                            <input type="hidden" name="submit" value="submit">
+                                                            <input class="reservation_input bg-4 pad vpad cell-m-100 border-0 ajax_submit mark-bg" type="submit" value="Забронювати">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

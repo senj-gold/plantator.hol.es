@@ -9,9 +9,9 @@
             </div>						
             <p>
                 <span class="pad nowrap">© 2013 ПЛАНТАТОР cafe &amp; restaurant</span>
-                <span class="pad nowrap">Киев, ул. Булгакова, д. 17</span>
+                <span class="pad nowrap">Київ, вул. Булгакова, б. 17</span>
                 <span class="pad nowrap">+38 (044) 592-36-67</span>
-                <span class="pad nowrap"><a href="mailto:flibuster77@ukr.net">Написать письмо</a></span>
+                <span class="pad nowrap"><a href="mailto:flibuster77@ukr.net">Написати листа</a></span>
             </p>
         </div>
     </footer>

@@ -1,0 +1,131 @@
+{% extends "admin/index.twig" %}
+{% block boody %}
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="page-title">
+                Галереи <small>список галерей</small>
+            </h3>
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="{{ Url.site('/admin') }}">Рабочий стол</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a href="{{ Url.site('/admin/gallery') }}">Галереи</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+                
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet">
+                <div class="portlet-body">
+                    <div class="table-container">
+                        <div class="btn-group" style="margin-bottom: 10px;">
+                            <a href="{{ Url.site('/admin/gallery/create') }}" id="sample_editable_1_new" class="btn green">
+                                Добавить <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+                        <script>
+                            $(document).ready(function(){
+                                $('.admin-editable').editable({
+                                    url: '/admin/gallery/save',
+                                    emptytext: 'Введите значение',
+                                    select2: {
+                                        placeholder: 'Введите значение',
+                                        minimumInputLength: 2,
+                                        width: 250
+                                    }
+                                });
+                                $('.admin-editable-photo').editable({
+                                    url: '/admin/gallery/savePhoto',
+                                    emptytext: 'Введите значение',
+                                    select2: {
+                                        placeholder: 'Введите значение',
+                                        minimumInputLength: 2,
+                                        width: 250
+                                    }
+                                });
+                            });
+                        </script>
+                        <table class="table table-striped table-bordered table-hover" id='ajaxBlock'>
+                            <thead>
+                                <tr role="row" class="heading">
+                                    <th width="5%">ID</th>
+                                    <th width="15%">Картинки</th>
+                                    <th width="15%">Название</th>
+                                    <th width="10%">Короткое описание</th>
+                                    
+                                    <th width="10%">Дата</th>
+                                    <th width="10%">Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in _galleryes %}
+                                    <tr>
+                                        <td>{{ item.id }}</td>
+                                        <td>
+                                            {% set images = item.photo.find_all %}
+                                            <div class="block-img">
+                                            {% for img in images%}
+                                                <div style="margin-bottom: 5px; border: solid 1px #eee;position: relative;">
+                                                    <a href="/admin/gallery/delImg/{{ img.id }}" class="fa fa-times-circle-o" style="position: absolute;top: -3px;right: 0px;" title="Удалить"></a>
+                                                    <img src="/media/img/gallery/{{ img.filename}}" style="max-width:100px;">
+                                                    <br>
+                                                    <a href="#" data-type="text" id="text" data-pk="{{ img.id }}" data-title="Введите текст" class="editable editable-click admin-editable-photo">{{ img.text }}</a>
+                                                </div>
+                                            {% endfor %}
+                                            </div>
+                                            <script>
+                                                $(document).ready(function(){
+                                                    $(function () {
+                                                        $('#fileupload{{item.id}}').fileupload({
+
+                                                        dataType: 'json',
+                                                        fail: function (e, data) {
+                                                            alert('Error upload');
+                                                        },
+                                                        done: function (e, data) {
+                                                            document.location.href = '';
+                                                        },
+                                                        add: function (e, data) {
+                                                            data.submit();
+                                                            /*if(confirm('Загрузить новое изображение? Старое будет удалено.')){data.submit();}*/
+                                                        }
+                                                        }).prop('disabled', !$.support.fileInput)
+                                                            .parent().addClass($.support.fileInput ? undefined : 'disabled');
+                                                    });
+                                                });
+                                            </script>
+                                            <span class="btn btn-success fileinput-button">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                                <span>Добавить фото</span>
+                                                <input id="fileupload{{item.id}}" type="file" name="img" data-url="/admin/gallery/saveimg/{{ item.id }}">
+                                            </span>
+                                        </td>
+                                        <td><a href="#" data-type="text" id="title" data-pk="{{ item.id }}" data-title="Введите название" class="editable editable-click admin-editable">{{ item.title }}</a></td>
+                                        <td><a href="#" data-type="textarea" id="short_content" data-pk="{{ item.id }}" data-title="Введите короткое описание" class="editable editable-click admin-editable">{{ item.short_content }}</a></td>
+                                       
+                                        <td>{{ item.data | date('d.m.Y') }}</td>
+                                        <td>
+                                            <a href="{{ Url.site('/admin/gallery/delete/' ~ item.id) }}"
+                                               class="btn default btn-xs black admin-delete"
+                                               data-question='Удалить галерею "{{ item.title }}"?'
+                                               >
+                                                <i class="fa fa-trash-o"></i>
+                                                Удалить
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock boody %}

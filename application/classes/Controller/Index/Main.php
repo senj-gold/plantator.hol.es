@@ -44,13 +44,35 @@ class Controller_Index_Main extends Controller_Base {
     }
 
     public function action_index() {
+        $post = $this->request->post();
+        $status = 0;
+        $errors = array();
+        if($post && !empty($post['firstname']) && !empty($post['phone'])){
+            $reserv = ORM::factory('Reservation');
+            $post['phone'] = str_replace(array(' ', '(', ')', '-'), '', $post['phone']);
+            $post['date'] = new \DateTime($post['date']);
+            $post['date'] = $post['date']->format('Y-m-d');
+            $reserv->values($post);
+            try {
+                $reserv->create();
+                $post['date'] = new \DateTime($post['date']);
+                $post['date'] = $post['date']->format('d-m-Y');
+                $status = 1;
+            } catch (ORM_Validation_Exception $e) {
+                $errors = $e->errors();
+            }
+            
+        }
+        
         $category = ORM::factory('Category')->where('lvl', '=', 1)->find_all();
         $news = ORM::factory('News')->order_by('data', 'DESC')->limit(4)->find_all();
         
         $this->template->v_body->v_page = View::factory('index/page/v_main')
                           ->bind('category', $category)
                           ->bind('news', $news)
+                          ->bind('post', $post)
+                          ->bind('status', $status)
+                          ->bind('errors', $errors)
                       ;
     }
-
 }

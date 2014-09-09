@@ -41,7 +41,8 @@ class Controller_Admin_Index extends Controller_Twig {
     }
     public function action_index()
     {
-        
+        $reserves = ORM::factory('Reservation')->where('date', '>=', date('Y-m-d'))->find_all();
+         $this->set('_reserves', $reserves);
     }
 
 }

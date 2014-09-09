@@ -24,10 +24,10 @@
             <div class="cell-t-auto"><a href="/" style="width: 50px;" class="link-block pad vpad mark-bg ico_pic_16b_home">&nbsp;</a></div>
             <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Menu'): ?> active<?php endif; ?>"><a href="/menu/1/" class="link-block pad vpad mark-bg"><?= __('Меню') ?></a></div>
             <!--<div class="cell-t-auto"><a href="/blunch/" class="link-block pad vpad mark-bg">Бизнес-ланч</a></div>-->
-            <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Afisha'): ?> active<?php endif; ?>"><a href="/afisha/" class="link-block pad vpad mark-bg">Афиша</a></div>
-            <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Banket'): ?> active<?php endif; ?>"><a href="/banket/" class="link-block pad vpad mark-bg">Банкеты</a></div>
+            <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Afisha'): ?> active<?php endif; ?>"><a href="/afisha/" class="link-block pad vpad mark-bg">Афіша</a></div>
+            <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Banket'): ?> active<?php endif; ?>"><a href="/banket/" class="link-block pad vpad mark-bg">Банкети</a></div>
             <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Gallery'): ?> active<?php endif; ?>"><a href="/gallery/" class="link-block pad vpad mark-bg">Фотогалерея</a></div>
-            <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Contacts'): ?> active<?php endif; ?>"><a href="/contacts/" class="link-block pad vpad mark-bg">Контакты и бронирование</a></div>
+            <div class="cell-t-auto<?php if (Request::initial()->controller() == 'Contacts'): ?> active<?php endif; ?>"><a href="/contacts/" class="link-block pad vpad mark-bg">Контакти і бронювання</a></div>
         </nav>
     </div>
     <!-- logo, contacts  -->
@@ -44,9 +44,9 @@
             </div>
             <!-- contacts -->
             <div style="line-height: 1.6em;" class="small cell-m-100 cell-t-50 mar-d-12-5 text-m-center text-t-left pad vpad">
-                <span class="nowrap">Киев, ул. Булгакова, д. 17</span><br>
+                <span class="nowrap">Київ, вул. Булгакова, б. 17</span><br>
                 <span class="nowrap">+38 (044) 592-36-67</span><br>
-                <span class="nowrap">Часы работы с 13:00 до 02:00</span>
+                <span class="nowrap">Часи работи від 13:00 до 02:00</span>
             </div>
             <div class="vpad pad nowrap cell-m-100 cell-t-25 text-m-center text-t-right">
                 <?php //  http://api.yandex.ru/share  ?>

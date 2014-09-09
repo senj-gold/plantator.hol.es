@@ -21,7 +21,7 @@
                         <header class="vpad pad text-m-center text-t-left">
                             <h2 class="huge"><?=$val->name?></h2>
                         </header>
-                        <?php $menu = ORM::factory('Menu')->where('cat_id', '=', $val->id)->find_all()?>
+                        <?php $menu = ORM::factory('Menu')->where('cat_id', '=', $val->id)->order_by('id', 'ASC')->find_all()?>
                         <?php foreach ($menu as $val_menu):?>
                         <div id="bx_2647885750_<?=$val_menu->id?>" class="row vpad pad text-m-center text-t-left">
                             <div class="row border-bottom-3">
@@ -29,9 +29,9 @@
                                     <div class="only-m row small opacity"><?=$val_menu->description?></div>                                        
                                 </div>
                                 <div class="cell-t-50 text-m-center text-t-right">
-                                    <span class="nowrap big"><?=$val_menu->price?> грн</span>
-                                    <span class="not-m opacity small nowrap"> / <?=$val_menu->heft?> гр</span>
-                                    <div class="only-m opacity small nowrap"><?=$val_menu->heft?> гр</div>                                        
+                                    <span class="nowrap big"><?=$val_menu->price?> <?php if(!empty($val_menu->price)):?>грн<?php endif?></span>
+                                    <span class="not-m opacity small nowrap"><?php if(!empty($val_menu->heft)):?> / <?=$val_menu->heft?> гр<?php endif?></span>
+                                    <div class="only-m opacity small nowrap"><?=$val_menu->heft?> <?php if(!empty($val_menu->heft)):?>гр<?php endif?></div>                                        
                                 </div>
                             </div>
                             <div class="not-m row small opacity"><?=$val_menu->description?></div>

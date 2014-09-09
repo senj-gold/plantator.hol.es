@@ -53,7 +53,7 @@ class Controller_Admin_Category extends Controller_Admin_Index {
                     }
                 }
             } else {
-                $objects = ORM::factory('Menu')->where('cat_id', '=', $object->id)->find_all();
+                $objects = ORM::factory('Menu')->where('cat_id', '=', $object->id)->order_by('id', 'ASC')->find_all();
                 foreach ($objects as $object) {
                     $data[] = array (
                         "id" => 'menu_' . $object->id,

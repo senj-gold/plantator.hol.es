@@ -1,26 +1,25 @@
 {% extends "admin/index.twig" %}
 {% block boody %}
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="page-title">
-                        Меню <small>новое блюдо</small>
-                    </h3>
-                    <ul class="page-breadcrumb breadcrumb">
-                        <li>
-                            <i class="fa fa-home"></i>
-                            <a href="{{ Url.site('/admin') }}">Рабочий стол</a>
-                            <i class="fa fa-angle-right"></i>
-                        </li>
-                        <li>
-                            <a href="{{ Url.site('/admin/menu') }}">Меню</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- END PAGE HEADER-->
-            <!-- BEGIN PAGE CONTENT-->
-            <div class="row">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="page-title">
+                Меню <small>новое блюдо</small>
+            </h3>
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="{{ Url.site('/admin') }}">Рабочий стол</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a href="{{ Url.site('/admin/menu') }}">Меню</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END PAGE HEADER-->
+    <!-- BEGIN PAGE CONTENT-->
+    <div class="row">
         <div class="col-md-12">
             <div class="portlet">
                 <div class="portlet-body">
@@ -42,6 +41,7 @@
                                             <label class="control-label col-md-3">Категория</label>
                                             <div class="col-md-9">
                                                  <select name="cat_id" class="form-control">
+                                                    <option value="">Выберите категорию</option>
                                                     {% for cat in _categories %}
                                                         {% if cat.name is not empty %} 
                                                             <option value="{{ cat.id }}"{% if cat.has_children %} disabled{% endif%}>{{ cat.getEmptyLvl }}{{ cat.name}}</option>
@@ -112,15 +112,11 @@
                                         </div>
                                     </div>
                                 </form>
-                                <!-- END FORM-->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End: life time stats -->
         </div>
     </div>
-            <!-- END PAGE CONTENT-->
-
 {% endblock boody %}

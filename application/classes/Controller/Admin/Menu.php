@@ -103,9 +103,9 @@ class Controller_Admin_Menu extends Controller_Admin_Index {
             // элемент по тэгу
             $trs = $dom->getElementsByTagName('tr');
                 foreach ($trs  as $tr){
-                    $item = array();
                     $menu = ORM::factory('Menu');
                     $menu->cat_id = (int)$post['cat_id'];
+                    $item = array();
                     $tds = $tr->getElementsByTagName('td');
                     foreach ($tds  as $key_1 =>$td){
                         $ps =  $td->getElementsByTagName('p');
@@ -133,11 +133,13 @@ class Controller_Admin_Menu extends Controller_Admin_Index {
                             }
                         }
                     }
-                        if(isset($post['save'])){
-                            $menu->save();
-                            HTTP::redirect('/admin/menu');
-                        }
-                        $items[] = $item;
+                    if(isset($post['save'])){
+                        $menu->create();
+                    }
+                    $items[] = $item;
+                }
+                 if(isset($post['save'])){
+                        HTTP::redirect('/admin/menu');
                     }
         } elseif ($post) {
             $errors['cat_id'] = 'Укажите категорию';
