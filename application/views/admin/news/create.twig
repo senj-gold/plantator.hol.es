@@ -51,7 +51,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Название</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="title" placeholder="Введите название" class="form-control">
+                                                <input type="text" name="title" placeholder="Введите название" value="{{ post['title']}}" class="form-control">
                                                 <span class="help-block">Введите название</span>
                                                 {% if _errors.title is defined %}{{ _errors.title.0 | raw('html') }}{% endif %}
                                             </div>
@@ -59,7 +59,9 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Описание</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="short_content" placeholder="Введите короткое описание" class="form-control">
+                                                <textarea name="short_content"  class="form-control">
+                                                    {{ post['short_content']}}
+                                                </textarea>
                                                 <span class="help-block">Введите короткое описание</span>
                                                 {% if _errors.short_content is defined %}{{ _errors.short_content.0 | raw('html') }}{% endif %}
                                             </div>
@@ -67,7 +69,9 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Полное описание</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="text" placeholder="Введите описание" class="form-control">
+                                                <textarea  name="text" class="form-control">
+                                                    {{ post['text']}}
+                                                </textarea>
                                                 <span class="help-block">Введите описание</span>
                                                 {% if _errors.text is defined %}{{ _errors.text.0 | raw('html') }}{% endif %}
                                             </div>

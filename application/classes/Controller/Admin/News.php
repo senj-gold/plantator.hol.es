@@ -58,6 +58,7 @@ class Controller_Admin_News extends Controller_Admin_Index {
 			}
 		}
         $this->set('_errors', $errors);
+        $this->set('post', $post);
     }
     public function action_save() {
         $this->default_template = 'admin/json';

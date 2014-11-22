@@ -1,7 +1,7 @@
     <div class="row bg-1 mar-d">
         <div class="row mar-t mar-d-6-25 cell-d-87-5 vpad2">
-            <h1 class="pad text-m-center text-t-left">Афиша</h1>
-            <p class="pad text-m-center text-t-left"><i>Мы любим устраивать шумные вечеринки и приглашать гостей. Если вы хотите весело провести праздник или выходной - добро пожаловать в наше заведение. Массу впечатлений и воспоминаний гарантируем :)</i></p>
+            <h1 class="pad text-m-center text-t-left">Афіша</h1>
+            <p class="pad text-m-center text-t-left"><i>Ми любимо влаштовувати гучні вечірки і запрошувати гостей . Якщо ви хочете весело провести свято чи вихідний - ласкаво просимо до нашого закладу . Масу вражень та спогадів гарантуємо :)</i></p>
             <div id="comp_f6daca05f65415d798ec4860d557d3e1">
                 <section class="row">
                     <?php foreach ($news as $val):?>
