@@ -229,7 +229,7 @@
                                     <thead>
                                         <tr role="row" class="heading">
                                             <th width="5%">ID</th>
-                                            <th width="15%">Категория</th>
+                                            <th width="15%">Категория (раздел)</th>
                                             <th width="15%">Название</th>
                                             <th width="10%">Описание</th>
                                             <th width="10%">Название на английском</th>
@@ -245,7 +245,7 @@
                                                 <td>
                                                     <a href="/admin/menu/edit/{{ dich.id }}">{{ dich.id }}</a>
                                                 </td>
-                                                <td><a href="#" data-type="select2" id="cat_id" data-pk="{{ dich.id }}" data-title="Выберите категорию" class="editable editable-click admin-editable-category">{{ dich.category.name }}</a></td>
+                                                <td><a href="#" data-type="select2" id="cat_id" data-pk="{{ dich.id }}" data-title="Выберите категорию" class="editable editable-click admin-editable-category">{{ dich.category.name }}</a> ({{ dich.category.parent.name }})</td>
                                                 <td><a href="#" data-type="text" id="name" data-pk="{{ dich.id }}" data-title="Введите название" class="editable editable-click admin-editable">{{ dich.name }}</a></td>
                                                 <td><a href="#" data-type="text" id="description" data-pk="{{ dich.id }}" data-title="Введите описание" class="editable editable-click admin-editable">{{ dich.description }}</a></td>
                                                 <td><a href="#" data-type="text" id="name_en" data-pk="{{ dich.id }}" data-title="Введите название на английском" class="editable editable-click admin-editable">{{ dich.name_en }}</a></td>

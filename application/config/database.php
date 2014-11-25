@@ -18,7 +18,7 @@ return array
 			 *
 			 * Ports and sockets may be appended to the hostname.
 			 */
-			'hostname'   => 'mysql.hostinger.com.ua',
+			'hostname'   => 'localhost',
 			'database'   => 'u641423114_plant',
 			'username'   => 'u641423114_plant',
 			'password'   => 'UJqcBNIh2Ax|aO',
