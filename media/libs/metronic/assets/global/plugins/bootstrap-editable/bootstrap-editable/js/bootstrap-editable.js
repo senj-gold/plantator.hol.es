@@ -5705,6 +5705,15 @@ Editableform based on Twitter Bootstrap
             monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             today: "Today",
             clear: "Clear"
+        },
+        ru: {
+            days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
+            daysShort: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
+            daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"],
+            months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+            monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+            today: "Today",
+            clear: "Clear"
         }
     };
 
@@ -6114,7 +6123,7 @@ $(function(){
         @type string
         @default yyyy-mm-dd
         **/
-        format:'yyyy-mm-dd',
+        format:'dd-mm-yyyy',
         /**
         Format used for displaying date. Also applied when converting date from element's text on init.   
         If not specified equals to <code>format</code>

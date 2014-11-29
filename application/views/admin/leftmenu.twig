@@ -4,19 +4,7 @@
             <li class="sidebar-toggler-wrapper">
                <div class="sidebar-toggler"></div>
             </li>
-            <li class="sidebar-search-wrapper hidden-xs">
-               {#<form class="sidebar-search" action="extra_search.html" method="POST">
-                    <a href="javascript:;" class="remove">
-                    </a>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <!-- DOC: value=" ", that is, value with space must be passed to the submit button -->
-                            <input class="btn submit" type="button" type="button" value=" "/>
-                        </span>
-                    </div>
-                </form>#}
-            </li>
+            <li class="sidebar-search-wrapper hidden-xs"></li>
             <li{% if _controller == 'Index' %} class="active"{% endif %}>
                 <a href="{{ Url.site('/admin') }}">
                     <i class="fa fa-home"></i>
@@ -36,26 +24,26 @@
                     <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
-                    <li{% if _controller == 'create' %} class="active"{% endif %}>
+                    <li{% if _controller == 'Menu' and _controller == 'create' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/menu/create') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Добавить блюдо</span>
                         </a>
                     </li>
-                    <li{% if _action == 'load' %} class="active"{% endif %}>
+                    <li{% if _controller == 'Menu' and _action == 'load' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/menu/load') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Загрузить из Word</span>
                         </a>
                     </li>
-                    <li{% if _action == 'index' %} class="active"{% endif %}>
+                    <li{% if _controller == 'Menu' and  _action == 'index' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/menu') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Список блюд</span>
                         </a>
                     </li>
                 </ul>
-            </li>           
+            </li>      
             <li{% if _controller == 'News' %} class="active"{% endif %}>
                 <a href="javascript:;">
                     <i class="fa fa-sitemap"></i>
@@ -63,19 +51,25 @@
                     <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
-                    <li{% if _action == 'create' %} class="active"{% endif %}>
+                    <li{% if _controller == 'News' and _action == 'create' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/news/create') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Создать афишу</span>
                         </a>
                     </li>
-                    <li{% if _action == 'index' %} class="active"{% endif %}>
+                    <li{% if  _controller == 'News' and _action == 'index' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/news') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Список афиш</span>
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li{% if _controller == 'Main' %} class="active"{% endif %}>
+                <a href="{{ Url.site('/admin/main') }}">
+                    <i class="fa fa-sitemap"></i>
+                    <span class="title">Тексты на главной</span>
+                </a>
             </li>
             <li{% if _controller == 'Banket' %} class="active"{% endif %}>
                 <a href="javascript:;">
@@ -84,13 +78,13 @@
                     <span class="arrow "></span>
                 </a>
                 <ul class="sub-menu">
-                    <li{% if _action == 'create' %} class="active"{% endif %}>
+                    <li{% if _controller == 'Banket' and _action == 'create' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/banket/create') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Добавить раздел</span>
                         </a>
                     </li>
-                    <li{% if _action == 'index' %} class="active"{% endif %}>
+                    <li{% if _controller == 'Banket' and _action == 'index' %} class="active"{% endif %}>
                         <a href="{{ Url.site('/admin/banket') }}">
                             <i class="fa fa-sitemap"></i>
                             <span class="title">Список разделов</span>

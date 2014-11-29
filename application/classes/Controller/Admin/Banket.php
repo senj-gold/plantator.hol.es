@@ -29,12 +29,10 @@ class Controller_Admin_Banket extends Controller_Admin_Index {
                         ->rule('title', 'max_length', array(':value', '255'))
                         ->rule('short_text', 'not_empty')
                         ->rule('short_text', 'min_length', array(':value', '5'));
-                if($object->check()){
+                if($object->check() && $_FILES['img']['tmp_name']){
                     
                     $object = ORM::factory('Banket');
                     $object->values($this->request->post());
-                    if($_FILES['img']['tmp_name']){
-
                         $file = $_FILES['img']['tmp_name'];
                         $name = $_FILES['img']['name'];
                         $type = strtolower(substr($name, 1 + strrpos($name, ".")));
@@ -42,14 +40,14 @@ class Controller_Admin_Banket extends Controller_Admin_Index {
                         $object->values($post)->save();
                         HTTP::redirect('/admin/banket');
 
-                    }else{
-                        $this->errors['img'] = __('Картинка не загружена');
-                    }
                     $object->create();
 				
                     HTTP::redirect("/admin/banket/");
                 } else {
                     $errors = $object->errors('models/banket');
+                    if(!$_FILES['img']['tmp_name']){
+                        $errors[] = __('Картинка не загружена');
+                    }
                 }
 			} catch (ORM_Validation_Exception $e) {
 				$errors = $e->errors('models');

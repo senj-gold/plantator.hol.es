@@ -11,10 +11,10 @@
                             <header class="pad vpad"><h2><?php echo $item->title?></h2></header>
                             <div class="cell-m-100 cell-t-62-5 pad vpad">
                                 <p class="small opacity">
-                                    <?php echo $item->short_text?>
+                                    <?= nl2br($item->short_text)?>
                                 </p>
                                 <p>
-                                    <?php echo $item->text?>
+                                    <?= nl2br($item->text)?>
                                 </p>
                             </div>
                             <div class="cell-m-100 cell-t-37-5 pad vpad">

@@ -41,6 +41,15 @@
                                 <!-- BEGIN FORM-->
                                 <form action="{{ Url.site('/admin/banket/create') }}" class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data">
                                     <div class="form-body">
+                                        {% if _errors|length > 0 %}
+                                            <div class="alert alert-danger">
+                                                <button class="close" data-close="alert"></button>
+                                                Были допущены ошибки:<br>
+                                                {% for error in _errors %}
+                                                    {{ error }}<br>
+                                                {% endfor %}
+                                            </div>
+                                            {% endif %}
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Картинка</label>
                                             <div class="col-md-9">

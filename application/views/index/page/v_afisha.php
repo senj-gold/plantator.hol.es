@@ -13,12 +13,12 @@
                             <div class="cell-m-100 cell-t-62-5 pad vpad">
                                 <h2><?=$val->title?></h2>
                                 <p class="small opacity"><?php $date = explode(' ', $val->data);$date = explode('-', $date[0]);?><?=$date[2].'.'.$date[1].'.'.$date[0]?></p>
-                                <p><?=$val->short_content?></p>
+                                <p><?=  nl2br($val->short_content)?></p>
                                 <?php if(!empty($val->text)):?>
                                 <div>
                                     <p class="dropdown">
-                                        <a href="#" class="js">Подробнее</a></p>
-                                    <div class="hidden small"><?=$val->text?></div>
+                                        <a href="#" class="js">Показати більше</a></p>
+                                    <div class="hidden small"><?=  nl2br($val->text)?></div>
                                 </div>
                                 <?php endif;?>
                             </div>

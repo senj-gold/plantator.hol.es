@@ -64,6 +64,7 @@ class Controller_Index_Main extends Controller_Base {
             
         }
         
+        $texts = ORM::factory('Main')->find_all();
         $category = ORM::factory('Category')->where('lvl', '=', 1)->find_all();
         $news = ORM::factory('News')->order_by('data', 'DESC')->limit(4)->find_all();
         
@@ -71,6 +72,7 @@ class Controller_Index_Main extends Controller_Base {
                           ->bind('category', $category)
                           ->bind('news', $news)
                           ->bind('post', $post)
+                          ->bind('texts', $texts)
                           ->bind('status', $status)
                           ->bind('errors', $errors)
                       ;

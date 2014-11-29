@@ -1,5 +1,19 @@
 {% extends "admin/index.twig" %}
 {% block boody %}
+    <script>
+        $(document).ready(function(){
+             $('.date-picker').datepicker({
+                rtl: Metronic.isRTL(),
+                autoclose: true,
+                format: "dd.mm.yyyy",
+                pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left"),
+                language: 'ru',
+                startView: 'decade',
+                weekStart: 1
+            });
+
+        });
+    </script>
     <div class="row">
         <div class="col-md-12">
             <h3 class="page-title">
@@ -38,6 +52,15 @@
                                 </div>
                             </div>
                             <div class="portlet-body form">
+                                {% if _errors|length > 0 %}
+                                <div class="alert alert-danger">
+                                    <button class="close" data-close="alert"></button>
+                                    Были допущены ошибки:<br>
+                                    {% for error in _errors %}
+                                        {{ error }}<br>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
                                 <!-- BEGIN FORM-->
                                 <form action="{{ Url.site('/admin/news/create') }}" class="form-horizontal form-row-seperated" method="post" enctype="multipart/form-data">
                                     <div class="form-body">
@@ -46,6 +69,19 @@
                                             <div class="col-md-9">
                                                  <input type="file" name="img" />
                                                 <span class="help-block">Выберите картинку</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Дата</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group input-medium date date-picker">
+                                                <input type="text" name="data" placeholder="Введите дату" value="{{ post['data']}}" class="form-control">
+                                                <span class="input-group-btn">
+                                                    <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                                </div>
+                                                <span class="help-block">Введите дату</span>
+                                                {% if _errors.data is defined %}{{ _errors.data.0 | raw('html') }}{% endif %}
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -59,9 +95,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Описание</label>
                                             <div class="col-md-9">
-                                                <textarea name="short_content"  class="form-control">
-                                                    {{ post['short_content']}}
-                                                </textarea>
+                                                <textarea name="short_content"  class="form-control">{{ post['short_content']}}</textarea>
                                                 <span class="help-block">Введите короткое описание</span>
                                                 {% if _errors.short_content is defined %}{{ _errors.short_content.0 | raw('html') }}{% endif %}
                                             </div>
@@ -69,9 +103,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Полное описание</label>
                                             <div class="col-md-9">
-                                                <textarea  name="text" class="form-control">
-                                                    {{ post['text']}}
-                                                </textarea>
+                                                <textarea  name="text" class="form-control">{{ post['text']}}</textarea>
                                                 <span class="help-block">Введите описание</span>
                                                 {% if _errors.text is defined %}{{ _errors.text.0 | raw('html') }}{% endif %}
                                             </div>

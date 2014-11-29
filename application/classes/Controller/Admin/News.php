@@ -21,6 +21,7 @@ class Controller_Admin_News extends Controller_Admin_Index {
                 // производим проверку всех полей
                 $object = Validation::factory($post);
                 $object
+                        ->label('data',  __('Дата') )
                         ->label('title',  __('Название') )
                         ->label('short_content', __('Короткое описание'))
                         ->label('text', __('Полное описание'))
@@ -30,28 +31,27 @@ class Controller_Admin_News extends Controller_Admin_Index {
                         ->rule('short_content', 'not_empty')
                         ->rule('short_content', 'min_length', array(':value', '5'))
                         ->rule('short_content', 'max_length', array(':value', '512'));
-                if($object->check()){
+                if($object->check() && $_FILES['img']['tmp_name']){
                     
                     $object = ORM::factory('News');
                     $object->values($this->request->post());
-                    if($_FILES['img']['tmp_name']){
-
                         $file = $_FILES['img']['tmp_name'];
                         $name = $_FILES['img']['name'];
+                        $date = new DateTime($post['data']);
+                        $post['data'] = $date->format('Y-m-d');
                         $type = strtolower(substr($name, 1 + strrpos($name, ".")));
                         $post['img'] = $object->save_img($file, $type);
                         $object->values($post)->save();
                         HTTP::redirect('/admin/news');
 
-                    }else{
-
-                                    $this->errors['img'] = __('Картинка не загружена');
-                    }
                     $object->create();
 				
-                    HTTP::redirect("/admin/news/edit/".$object->pk());
+                    HTTP::redirect("/admin/news/");
                 } else {
                     $errors = $object->errors('models/news');
+                    if(!$_FILES['img']['tmp_name']){
+                        $errors[] = __('Картинка не загружена');
+                    }
                 }
 			} catch (ORM_Validation_Exception $e) {
 				$errors = $e->errors('models');
@@ -72,7 +72,11 @@ class Controller_Admin_News extends Controller_Admin_Index {
             if ($name && $id) {
                 $object = ORM::factory('News', $id);
                 if ($object->loaded()) {
-                    if (in_array($name, array('title', 'short_content', 'text'))) {
+                    if (in_array($name, array('title', 'short_content', 'text', 'data'))) {
+                        if ($name == 'data') {
+                            $date = new DateTime($value);
+                            $value = $date->format('Y-m-d');
+                        }
                         $object->$name = $value;
                         try {
                             $object->save();
