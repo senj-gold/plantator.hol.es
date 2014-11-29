@@ -12,7 +12,7 @@ class Controller_Admin_Ajax extends Controller {
     public function before() {
         parent::before();
 
-        self::$domain_name = 'flibuster.hol.es';
+        self::$domain_name = 'плантатор.com.ua';
         
         $this->auth = Auth::instance();
         $this->user = $this->auth->get_user(); /* получаем данные авторизированого пользователя */

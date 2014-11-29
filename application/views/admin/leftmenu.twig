@@ -77,6 +77,27 @@
                     </li>
                 </ul>
             </li>
+            <li{% if _controller == 'Banket' %} class="active"{% endif %}>
+                <a href="javascript:;">
+                    <i class="fa fa-sitemap"></i>
+                    <span class="title">Банкеты</span>
+                    <span class="arrow "></span>
+                </a>
+                <ul class="sub-menu">
+                    <li{% if _action == 'create' %} class="active"{% endif %}>
+                        <a href="{{ Url.site('/admin/banket/create') }}">
+                            <i class="fa fa-sitemap"></i>
+                            <span class="title">Добавить раздел</span>
+                        </a>
+                    </li>
+                    <li{% if _action == 'index' %} class="active"{% endif %}>
+                        <a href="{{ Url.site('/admin/banket') }}">
+                            <i class="fa fa-sitemap"></i>
+                            <span class="title">Список разделов</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li{% if _controller == 'Gallery' %} class="active"{% endif %}>
                 <a href="javascript:;">
                     <i class="fa fa-sitemap"></i>

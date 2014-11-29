@@ -30,8 +30,8 @@
                                 </div>
                                 <div class="cell-t-50 text-m-center text-t-right">
                                     <span class="nowrap big"><?=$val_menu->price?> <?php if(!empty($val_menu->price)):?>грн<?php endif?></span>
-                                    <span class="not-m opacity small nowrap"><?php if(!empty($val_menu->heft)):?> / <?=$val_menu->heft?> гр<?php endif?></span>
-                                    <div class="only-m opacity small nowrap"><?=$val_menu->heft?> <?php if(!empty($val_menu->heft)):?>гр<?php endif?></div>                                        
+                                    <span class="not-m opacity small nowrap"><?php if(!empty($val_menu->heft)):?> / <?=$val_menu->heft?><?php endif?></span>
+                                    <div class="only-m opacity small nowrap"><?=$val_menu->heft?> <?php if(!empty($val_menu->heft)):?><?php endif?></div>                                        
                                 </div>
                             </div>
                             <div class="not-m row small opacity"><?=$val_menu->description?></div>

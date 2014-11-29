@@ -34,7 +34,7 @@ class Controller_Index_Main extends Controller_Base {
         $this->template->scripts[] = '/media/libs/core_window.js';
         $this->template->scripts[] = '/media/libs/utils.js';
         $this->template->scripts[] = '/media/libs/core_popup.js';
-        $this->template->scripts[] = '/media/js/base.js';
+//        $this->template->scripts[] = '/media/js/base.js';
 
 
         $this->template->v_body = View::factory('index/v_body');

@@ -6,12 +6,12 @@ return array(
     'emailNot' => 'Емайл не найден',
     'newPassSended' => 'Новый пароль был отправлен Вам на почту!',
     'email' => array(
-        'from' => 'robot@flibuster.hol.es',
+        'from' => 'robot@плантатор.com.ua',
         'themes' => array(
-            'registration' => 'Регистрация на flibuster.hol.es',
-            'passwordReset' => 'Восстановление пароля на flibuster.hol.es',
-            'passwordReset' => 'Восстановление пароля на flibuster.hol.es',
-            'newPassword' => 'Ваш новый пароль на flibuster.hol.es',
+            'registration' => 'Регистрация на плантатор.com.ua',
+            'passwordReset' => 'Восстановление пароля на плантатор.com.ua',
+            'passwordReset' => 'Восстановление пароля на плантатор.com.ua',
+            'newPassword' => 'Ваш новый пароль на плантатор.com.ua',
         ),
     ),
 );

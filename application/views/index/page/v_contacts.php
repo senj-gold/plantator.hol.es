@@ -11,7 +11,7 @@
                     <div class="bx-yandex-view-map">
 
                         <div id="BX_YMAP_MAP_cS6y64Sldh" class="bx-yandex-map" style="height: 350px; width: 100%;">
-                            <iframe src="http://maps.google.com.ua/maps/ms?hl=uk&amp;client=firefox-a&amp;ie=UTF8&amp;msa=0&amp;msid=118234418215466445607.000496d2a23cb5b0c4d59&amp;ll=50.41262,30.40844&amp;spn=0.009572,0.028239&amp;z=15&amp;output=embed" frameborder="0" scrolling="no" height="350" width="100%" marginwidth="0" marginheight="0"></iframe>
+                            <iframe src="http://maps.google.com.ua/maps/ms?hl=uk&amp;client=firefox-a&amp;ie=UTF8&amp;msa=0&amp;msid=118234418215466445607.000496d2a23cb5b0c4d59&amp;ll=50.41062,30.40444&amp;spn=0.009572,0.028239&amp;z=15&amp;output=embed" frameborder="0" scrolling="no" height="350" width="100%" marginwidth="0" marginheight="0"></iframe>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                         <div class="ico_pic_32a_iphone_portrait">&nbsp;</div>
                         <p>
                             +38 (044) 592-36-67<br>
-                            <a href="mailto:flibuster77@ukr.net"><?=__('Написать письмо')?></a>
+                            <a href="mailto:plantator88@ukr.net"><?=__('Надіслати листа')?></a>
                         </p>
                     </div>
                     <div class="cell-m-100 vpad text-m-center">

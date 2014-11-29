@@ -3,7 +3,7 @@
 return array(
     'base_path' => URL::base().'media/libs/ckeditor/',
     'config'    => array(
-        //'toolbar'          => 'Standart',
+        'toolbar'          => 'Standart',
         'language'         => 'ru',
         'width'            => 650,
         'height'           => 250,
@@ -23,8 +23,7 @@ return array(
             array('name' => 'basicstyles', 'groups' => array('basicstyles', 'cleanup')),
             array('name' => 'paragraph', 'groups' => array('list', 'indent', 'blocks', 'align', 'bidi')),
             array('name' => 'styles'),
-            array('name' => 'colors'),
-            array('name' => 'about')
+            array('name' => 'colors')
         )
     )
 );

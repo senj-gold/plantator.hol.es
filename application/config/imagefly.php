@@ -43,7 +43,8 @@ return array
         'w320-h240-c',
         'w640-w480-q60' 
         */
-        'w500-h233-c'
+        'w500-h233-c',
+        'w500'
     ),
     /**
      * Configure one or more watermarks. Each configuration key can be passed as a param through an Imagefly URL to apply the watermark.

@@ -1,0 +1,112 @@
+{% extends "admin/index.twig" %}
+{% block boody %}
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="page-title">
+                Банкеті <small>список статей</small>
+            </h3>
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="{{ Url.site('/admin') }}">Рабочий стол</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a href="{{ Url.site('/admin/banket') }}">Банкеты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+                
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet">
+                <div class="portlet-body">
+                    <div class="table-container">
+                        <div class="btn-group" style="margin-bottom: 10px;">
+                            <a href="{{ Url.site('/admin/banket/create') }}" id="sample_editable_1_new" class="btn green">
+                                Добавить <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+                        <script>
+                            $(document).ready(function(){
+                                $('.admin-editable').editable({
+                                    url: '/admin/banket/save',
+                                    emptytext: 'Введите значение',
+                                    select2: {
+                                        placeholder: 'Введите значение',
+                                        minimumInputLength: 2,
+                                        width: 250
+                                    }
+                                });
+                            });
+                        </script>
+                        <table class="table table-striped table-bordered table-hover" id='ajaxBlock'>
+                            <thead>
+                                <tr role="row" class="heading">
+                                    <th width="5%">ID</th>
+                                    <th width="15%">Картинка</th>
+                                    <th width="15%">Название</th>
+                                    <th width="10%">Короткое описание</th>
+                                    <th width="10%">Описание</th>
+                                    <th width="10%">Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in _banket %}
+                                    <tr>
+                                        <td>{{ item.id }}</td>
+                                        <td>
+                                             {% if item.img %}
+                                                <img style="max-width:114px;" src="{{ Url.media('/media/img/banket/' ~ item.img) }}">
+                                            {% endif %}
+                                            <script>
+                                                $(document).ready(function(){
+                                                    $(function () {
+                                                        $('#fileupload{{item.id}}').fileupload({
+
+                                                        dataType: 'json',
+                                                        fail: function (e, data) {
+                                                            alert('Error upload');
+                                                        },
+                                                        done: function (e, data) {
+                                                            $(this).parents('td').find('img').remove();
+                                                            $(this).parents('td').prepend('<img style="max-width:114px;" src="/media/img/banket/'+data.result.file+'?v='+ Math.random()+'" />');
+                                                        },
+                                                        add: function (e, data) {
+                                                            if(confirm('Загрузить новое изображение? Старое будет удалено.')){data.submit();}
+                                                        }
+                                                        }).prop('disabled', !$.support.fileInput)
+                                                            .parent().addClass($.support.fileInput ? undefined : 'disabled');
+                                                    });
+                                                });
+                                            </script>
+                                            <span class="btn btn-success fileinput-button">
+                                                <i class="glyphicon glyphicon-plus"></i>
+                                                <span>{% if item.img is not empty %}Изменить{% else %}Загрузить{% endif %}</span>
+                                                <input id="fileupload{{item.id}}" type="file" name="img" data-url="/admin/banket/saveimg/{{ item.id }}">
+                                            </span>
+                                        </td>
+                                        <td><a href="#" data-type="text" id="title" data-pk="{{ item.id }}" data-title="Введите название" class="editable editable-click admin-editable">{{ item.title }}</a></td>
+                                        <td><a href="#" data-type="textarea" id="short_text" data-pk="{{ item.id }}" data-title="Введите короткое описание" class="editable editable-click admin-editable">{{ item.short_text }}</a></td>
+                                        <td><a href="#" data-type="textarea" id="text" data-pk="{{ item.id }}" data-title="Введите описание" class="editable editable-click admin-editable">{{ item.text }}</a></td>
+                                        <td>
+                                            <a href="{{ Url.site('/admin/banket/delete/' ~ item.id) }}"
+                                               class="btn default btn-xs black admin-delete"
+                                               data-question='Удалить статью "{{ item.title }}"?'
+                                               >
+                                                <i class="fa fa-trash-o"></i>
+                                                Удалить
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock boody %}

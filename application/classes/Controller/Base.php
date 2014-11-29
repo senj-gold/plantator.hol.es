@@ -14,7 +14,7 @@ class Controller_Base extends Controller_Template {
 
     public function before() {
         parent::before();
-        self::$domain_name = 'plantator.hol.es';
+        self::$domain_name = 'плантатор.com.ua';
 //        $region_obj = new Model_Geo();
 //        $region_obj->define_region();
 //        $arr_lang  = ORM::factory('Lang')->get_array_alias();
@@ -30,7 +30,7 @@ class Controller_Base extends Controller_Template {
 //
         $this->template->title 		= 'Плантатор';
         $this->template->description    = '';
-        $this->template->keywords 	= '';
+        $this->template->keywords 	= 'Таверна, плантатор, кафе, борщеговке, меню, банкетне, барне';
 
         // Подключаем стили
         $this->template->styles = array();

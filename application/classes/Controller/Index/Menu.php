@@ -6,10 +6,11 @@ class Controller_Index_Menu extends Controller_Index_Main {
 
     public function before() {
         parent::before();
-        
+        $this->template->title 		= 'Плантатор меню';
 
     }
       public function action_index() {
+          
         $this->template->v_body->v_page = View::factory('index/page/v_menu');
       }
       public function action_1() {

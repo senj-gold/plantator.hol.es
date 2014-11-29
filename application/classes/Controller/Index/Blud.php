@@ -12,9 +12,10 @@ class Controller_Index_Blud extends Controller_Index_Main {
       public function action_index() {
           $blud = ORM::factory('Menu', $this->request->param('id'));
           if(!$blud->loaded()){
-    throw new HTTP_Exception_404('Page not found');
+            throw new HTTP_Exception_404('Page not found');
           }
-          $this->name->title=$blud->name;
+          $this->template->title = $blud->name;
+          $this->template->description = $blud->description;
           
         $this->template->v_body->v_page = View::factory('index/page/v_blud')
                           ->bind('blud', $blud);

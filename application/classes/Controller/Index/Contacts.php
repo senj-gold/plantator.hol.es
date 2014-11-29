@@ -10,6 +10,7 @@ class Controller_Index_Contacts extends Controller_Index_Main {
 
     }
       public function action_index() {
+        $this->template->title 		= 'Плантатор контакти';
         $this->template->v_body->v_page = View::factory('index/page/v_contacts');
           
       }

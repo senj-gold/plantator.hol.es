@@ -8,7 +8,7 @@
                         <a id="article<?=$val->id?>"></a>
                         <article id="bx_2647885750_<?=$val->id?>" class="row vpad2 text-m-center text-t-left">
                             <div class="cell-m-100 cell-t-37-5 pad vpad">
-                                <figure class="row border-radius-1"><img src="/imagefly/w500-h233-c/media/img/news/<?= $val->img ?>" /></figure>
+                                <figure class="row border-radius-1"><img src="/imagefly/w500/media/img/news/<?= $val->img ?>" /></figure>
                             </div>
                             <div class="cell-m-100 cell-t-62-5 pad vpad">
                                 <h2><?=$val->title?></h2>
